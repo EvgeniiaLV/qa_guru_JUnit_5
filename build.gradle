@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+}
+
+group = 'guru.qa'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(
+            "com.codeborne:selenide:6.19.1",
+            "org.junit.jupiter:junit-jupiter:5.10.0",
+            "org.slf4j:slf4j-simple:2.0.7"
+    )
+}
+
+test {
+    useJUnitPlatform()
+}
+
+/* PART OF THE HOMEWORK
+
+// Task to run tests with tag "WEB"
+tasks.register('WEB', Test) {
+    testLogging {
+        events "passed", "skipped", "failed", "standardOut", "standardError"
+        exceptionFormat "full"
+    }
+    useJUnitPlatform {
+        includeTags("WEB")
+    }
+}
+
+// Task to run tests with tag "BLOCKER"
+tasks.register('BLOCKER', Test) {
+    testLogging {
+        events "passed", "skipped", "failed", "standardOut", "standardError"
+        exceptionFormat "full"
+    }
+    useJUnitPlatform {
+        includeTags("BLOCKER")
+    }
+}
+*/
